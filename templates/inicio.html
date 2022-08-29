@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+  <!-- Informacion de la pagina para los navegadores -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}"/>
+    <link rel="icon" href="{% static 'img/letrac.png' %}">
+    {% block css %} {% endblock %}
+    <title> {% block titulo %} Nomina {% endblock %}  </title>
+  </head>
+  <!-- contenido de la pagina que ven lo usuarios -->
+  <body>
+    <!--* encabezado(logo-menu-titulo) del sitio -->
+    <header class="header">
+      <nav class="navegacion">
+        <a href="{% url 'inicio' %}" class="logo">
+          <img src="{% static 'img/letrac.png' %}" width="50px" alt="logo" />
+
+          <div class="logo">
+               Rol de Pagos
+           </div>
+        </a>
+        <ul class="menu">
+          <li><a href="{% url 'inicio' %}">Inicio</a></li>
+          <li><a href="{% url 'cargo' %}">Cargos</a></li>
+          <li><a href="{% url 'departamento' %}">Departamentos</a></li>
+          <li><a href="{% url 'empleado' %}">Empleados</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      {% block contenido %}
+      <div>
+        <section class ="principal">
+            <h1>¡Bienvenido!</h1>
+            <img width="" src="{% static 'img/roldepago.png' %}" alt="Sin imagen" />
+        </section>
+      </div>
+      {% endblock %}
+      <footer>
+        <div class="footer-container">
+            <div class="footer-content-container">
+                <h3 class="website-logo" style="text-align: center;">Contacto</h3>
+                <p>(+593) 99 025 5359
+                  <br>(+593) 99 324 9224
+                  <br>(+593) 96 076 8842
+                  <br>(+593) 96 786 4319</p>
+            </div>
+            <div class="footer-content-container">
+              <h3 class="website-logo" >Email</h3>
+              <p>dmorang5@unemi.edu.ec
+                <br>rsangacham@unemi.edu.ec
+                <br>bmoras3@unemi.edu.ec
+                <br>bpiedraj@unemi.edu.ec</p>
+            </div>
+            <div class="footer-content-container">
+              <h3 class="website-logo" >Dirección</h3>
+              <p>Cdla. Universitaria Km. 1.5 vía Km. 26, Milagro, Guayas</p>
+            </div>
+            <div class="footer-content-container">
+              <h3 class="website-logo">Redes Sociales</h3>
+              <a href="https://walink.co/335300" >WhatsApp</a>
+              <a href="https://twitter.com/dennmmg/">Twitter</a>
+              <a href="mailto:dmorang5@unemi.edu.ec?Subject=¡Hola!%20Bienvenido" >Gmail</a>
+            </div>
+        </div>
+        <div class="copyright-container">
+          <span class="copyright">&copy;Copyright - 2022 - Todos los derechos reservados &copy; </br>
+            INGENIERÍA EN SOFTWARE | 3° NIVEL </br>
+            UNEMI</span>
+        </div>
+    </footer>
+    </main>
+  </body>
+</html>
